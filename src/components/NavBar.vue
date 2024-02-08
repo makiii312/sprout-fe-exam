@@ -55,12 +55,16 @@ const NAV_LINKS = [
 .navbar {
     background-color: #333333;
     display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
     flex-wrap: wrap;
     align-content: center;
     padding: 12px 24px;
     row-gap: 18px;
     height: 76px;
     justify-content: space-between;
+    z-index: 1;
 
     &__brand {
         display: inline-block;
