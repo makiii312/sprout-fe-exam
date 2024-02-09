@@ -6,21 +6,37 @@
         </div>
 
         <div class="sidebar__nav">
-            <a class="sidebar__nav-link" href="">
+            <RouterLink class="sidebar__nav-link" :to="{ name: 'attendance-logs' }">
                 <img src="@/assets/images/attendance-logs.svg" alt="Attendance Logs">
                 Attendance Logs
-            </a>
-            <a class="sidebar__nav-link" href="">
+            </RouterLink>
+            <RouterLink class="sidebar__nav-link" :to="{ name: 'export-files' }">
                 <img src="@/assets/images/exported-files.svg" alt="Exported Files">
                 Exported Files
-            </a>
+            </RouterLink>
         </div>
 
+        <div class="sidebar__filter">
+            <Filter></Filter>
+        </div>
+
+        <div class="sidebar__actions">
+            <button class="sidebar__actions--search" type="button">
+                <img src="@/assets/images/search.svg" alt="Search Button">
+                Search
+            </button>
+            <button class="sidebar__actions--export" type="button" disabled>
+                <img src="@/assets/images/exported-files.svg" alt="Export Button">
+                Export
+            </button>
+
+        </div>
     </aside>
 </template>
 
 <script setup lang="ts">
-
+import { RouterLink } from 'vue-router'
+import Filter from './Filter.vue';
 </script>
 
 <style scoped lang="scss">
@@ -62,9 +78,48 @@
         padding: 16px;
         column-gap: 8px;
 
-        &:hover {
+        &:hover, &.active {
             background-color: #E6FFEE;
             color: #2D4F43;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 24px;
+        row-gap: 8px;
+        border-top: 1px solid #C3CDC9;
+
+        button {
+            padding: 16px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+
+            img {
+                margin-right: 8px;
+                width: 16px;
+                height: 16px;
+                vertical-align: middle;
+            }
+
+            &:hover:disabled {
+                cursor: not-allowed;
+            }
+        }
+
+        &--search {
+            background: #17AD49;
+            border: none;
+            color: #FFFFFF;
+        }
+
+        &--export {
+            background: #FFFFFF;
+            border: 1px solid #C3CDC9;
         }
     }
 }

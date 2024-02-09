@@ -12,7 +12,9 @@
         <div class="table__footer">
             <div class="table__footer-page-limit">
                 <span>Items per page</span>
-                <select name="page-limit" id="page-limit"></select>
+                <select name="page-limit" id="page-limit">
+                    <option value="10">10</option>
+                </select>
             </div>
 
             <div class="table__footer-pagination">
@@ -78,6 +80,23 @@ defineProps({
         justify-content: space-between;
         align-content: center;
         align-items: center;
+
+        &-page-limit {
+            select {
+                height: 24px;
+                width: 57px;
+                padding: 0px 0px 0px 8px;
+                -webkit-appearance: none;
+                border: 1px solid #A5B3AF;
+                border-radius: 4px;
+                appearance: none;
+                background-image: url('@/assets/images/arrow-down-green.svg');
+                background-repeat: no-repeat;
+                background-position: right 0.7rem top 50%;
+                background-size: 0.65rem auto;
+                margin-left: 8px;
+            }
+        }
     }
 
 }

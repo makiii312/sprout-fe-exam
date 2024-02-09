@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import TableList from './TableList.vue'
+import TableList from '../components/TableList.vue'
 
 </script>
 

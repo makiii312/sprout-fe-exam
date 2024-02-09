@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import NavBar from './components/NavBar.vue'
 import SideBar from './components/SideBar.vue'
-import AttendanceLogTable from './components/AttendanceLogTable.vue'
-import ExportedFileTable from './components/ExportedFileTable.vue'
+
+import { RouterView } from 'vue-router';
 </script>
 
 <template>
@@ -12,7 +12,7 @@ import ExportedFileTable from './components/ExportedFileTable.vue'
 
   <main class="main">
     <SideBar />
-    <AttendanceLogTable />
+    <RouterView />
   </main>
 </template>
 

@@ -19,13 +19,14 @@
 </template>
 
 <script setup lang="ts">
-import TableList from './TableList.vue'
+import TableList from '../components/TableList.vue'
 
 </script>
 
 <style scoped lang="scss">
 
 .exported-file {
+    height: 100%;
     width: calc(100% - 354px);
     margin-left: 354px;
     padding: 20px;
@@ -50,7 +51,7 @@ import TableList from './TableList.vue'
     }
 
     &__table-list {
-        height: 564px;
+        height: 822px;
     }
 }
 </style>
